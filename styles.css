@@ -35,50 +35,80 @@ header .search-bar button {
     cursor: pointer;
 }
 
-header .cart a, header .account a {
+header .cart button, header .account button {
+    background: none;
+    border: none;
     color: white;
-    text-decoration: none;
-    padding: 5px 10px;
-    background-color: #ff9900;
-    border-radius: 3px;
+    font-size: 24px;
+    cursor: pointer;
 }
 
-nav {
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
     background-color: #37475a;
-    padding: 10px;
+    color: white;
+    transition: left 0.3s ease;
+    padding: 20px;
 }
 
-nav ul {
+.cart-sidebar {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    color: black;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    transition: right 0.3s ease;
+    padding: 20px;
+}
+
+.sidebar .profile, .cart-sidebar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .profile img, .cart-sidebar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.sidebar .profile span, .cart-sidebar span {
+    display: block;
+    margin-top: 10px;
+}
+
+.sidebar ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: space-around;
 }
 
-nav ul li {
-    display: inline;
+.sidebar ul li {
+    margin-bottom: 20px;
 }
 
-nav ul li a {
+.sidebar ul li a {
     color: white;
     text-decoration: none;
     padding: 10px 20px;
     display: block;
 }
 
-nav ul li a:hover {
+.sidebar ul li a:hover {
     background-color: #232f3e;
-}
-
-main {
-    padding: 20px;
 }
 
 .products {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding-top: 60px;
 }
 
 .product {
@@ -87,7 +117,8 @@ main {
     padding: 10px;
     margin: 10px;
     text-align: center;
-    width: 200px;
+    width: 150px;
+    cursor: pointer;
 }
 
 .product img {
@@ -106,27 +137,42 @@ main {
     cursor: pointer;
 }
 
-.settings, .register {
+.product .price {
+    color: green;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.product-details {
     padding: 20px;
 }
 
-.settings form, .register form {
+.product-details img {
+    max-width: 100%;
+    height: auto;
+}
+
+.comments, .suggestions {
+    margin-top: 20px;
+}
+
+.comments form, .suggestions form {
     display: flex;
     flex-direction: column;
 }
 
-.settings label, .register label {
+.comments label, .suggestions label {
     margin-top: 10px;
 }
 
-.settings input, .register input, .settings textarea, .register textarea {
+.comments textarea, .comments select, .suggestions textarea, .suggestions select {
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.settings button, .register button {
+.comments button, .suggestions button {
     margin-top: 20px;
     padding: 10px;
     background-color: #4CAF50;
@@ -136,8 +182,32 @@ main {
     cursor: pointer;
 }
 
-.product .price {
-    color: green;
-    font-weight: bold;
-    margin: 10px 0;
+.comments .comment, .suggestions .suggestion {
+    border-top: 1px solid #ccc;
+    padding: 10px 0;
 }
+
+#productRating span {
+    font-size: 24px;
+    color: gold;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.cart-item button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
