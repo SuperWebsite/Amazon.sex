@@ -2,6 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    direction: rtl;
+    background-color: #f4f4f4;
 }
 
 header {
@@ -15,20 +17,24 @@ header {
 
 header .logo h1 {
     margin: 0;
+    font-size: 1.5em;
 }
 
 header .search-bar {
     display: flex;
+    flex: 1;
+    margin: 0 20px;
 }
 
 header .search-bar input {
-    padding: 5px;
+    width: 100%;
+    padding: 10px;
     border: none;
     border-radius: 3px 0 0 3px;
 }
 
 header .search-bar button {
-    padding: 5px;
+    padding: 10px;
     border: none;
     background-color: #febd69;
     border-radius: 0 3px 3px 0;
@@ -39,8 +45,9 @@ header .cart button, header .account button {
     background: none;
     border: none;
     color: white;
-    font-size: 24px;
+    font-size: 1.5em;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 .sidebar {
@@ -73,15 +80,16 @@ header .cart button, header .account button {
     margin-bottom: 20px;
 }
 
-.sidebar .profile img, .cart-sidebar img {
+.sidebar .profile img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
 }
 
-.sidebar .profile span, .cart-sidebar span {
+.sidebar .profile span {
     display: block;
     margin-top: 10px;
+    font-size: 1.2em;
 }
 
 .sidebar ul {
@@ -98,6 +106,8 @@ header .cart button, header .account button {
     text-decoration: none;
     padding: 10px 20px;
     display: block;
+    font-size: 1.1em;
+    border-radius: 3px;
 }
 
 .sidebar ul li a:hover {
@@ -108,7 +118,7 @@ header .cart button, header .account button {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding-top: 60px;
+    padding: 60px 20px;
 }
 
 .product {
@@ -117,8 +127,14 @@ header .cart button, header .account button {
     padding: 10px;
     margin: 10px;
     text-align: center;
-    width: 150px;
-    cursor: pointer;
+    width: 200px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.product:hover {
+    transform: scale(1.05);
 }
 
 .product img {
@@ -135,6 +151,12 @@ header .cart button, header .account button {
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.product button:hover {
+    background-color: #cc7a00;
 }
 
 .product .price {
@@ -154,6 +176,10 @@ header .cart button, header .account button {
 
 .comments, .suggestions {
     margin-top: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .comments form, .suggestions form {
@@ -180,6 +206,11 @@ header .cart button, header .account button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.comments button:hover, .suggestions button:hover {
+    background-color: #388E3C;
 }
 
 .comments .comment, .suggestions .suggestion {
@@ -211,3 +242,10 @@ header .cart button, header .account button {
     color: white;
     border: none;
     padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+main {
+    padding-top: 60px;
+}
