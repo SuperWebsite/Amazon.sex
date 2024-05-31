@@ -1,37 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع تسوق</title>
+    <title>موقعي التجاري</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>مرحبًا بك في موقع التسوق</h1>
-        <div id="settings">
-            <label for="publishProducts">نشر السلع:</label>
-            <input type="checkbox" id="publishProducts" name="publishProducts">
+        <div class="logo">
+            <h1>موقعي التجاري</h1>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">الصفحة الرئيسية</a></li>
-                <li><a href="#">المنتجات</a></li>
-                <li><a href="#">سلة المشتريات</a></li>
-                <li><a href="#">تسجيل الدخول</a></li>
-            </ul>
-        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="ابحث عن منتجات...">
+            <button>بحث</button>
+        </div>
+        <div class="cart">
+            <a href="#">سلة التسوق</a>
+        </div>
     </header>
-    <section id="products">
-        <!-- المنتجات ستتم إضافتها هنا بواسطة السكربت -->
-    </section>
-    <div id="addProduct">
-        <input type="text" id="productName" placeholder="اسم المنتج">
-        <input type="text" id="productDescription" placeholder="وصف المنتج">
-        <input type="text" id="productPrice" placeholder="السعر">
-        <input type="file" id="productImage">
-        <button onclick="addProduct()">إضافة المنتج</button>
-    </div>
-    <script src="script.js"></script>
+    <nav>
+        <ul>
+            <li><a href="#">الرئيسية</a></li>
+            <li><a href="#">المنتجات</a></li>
+            <li><a href="#">عروض</a></li>
+            <li><a href="#">اتصل بنا</a></li>
+            <li><a href="settings.html">الإعدادات</a></li> <!-- رابط إلى صفحة الإعدادات -->
+        </ul>
+    </nav>
+    <main>
+        <section class="products">
+            <!-- المنتجات -->
+        </section>
+    </main>
+    <footer>
+        <p>حقوق النشر © 2024 موقعي التجاري</p>
+    </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
