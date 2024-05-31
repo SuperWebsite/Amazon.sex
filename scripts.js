@@ -1,4 +1,16 @@
-// scripts.js
+// Initialize Firebase
+const firebaseConfig = {
+  apiKey: "QR2gCQbE8Um0VNrrOAvbBt5O9O91SzATfhlWeKdGGzs",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  databaseURL: "YOUR_DATABASE_URL",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+firebase.initializeApp(firebaseConfig);
+
 document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll('.product button');
     buttons.forEach(button => {
@@ -23,23 +35,25 @@ document.addEventListener("DOMContentLoaded", function() {
                 description: productDescription
             };
 
-            addProductToLocalStorage(newProduct);
+            // Add product to Firebase database
+            const db = firebase.database();
+            db.ref('products').push(newProduct);
+
             alert('تم إضافة المنتج بنجاح!');
             productForm.reset();
         });
     }
 
-    function addProductToLocalStorage(product) {
-        let products = JSON.parse(localStorage.getItem('products')) || [];
-        products.push(product);
-        localStorage.setItem('products', JSON.stringify(products));
-    }
-
-    function loadProductsFromLocalStorage() {
-        let products = JSON.parse(localStorage.getItem('products')) || [];
+    function loadProductsFromFirebase() {
+        const db = firebase.database();
+        const productsRef = db.ref('products');
         const productsContainer = document.querySelector('.products');
-        if (productsContainer) {
-            products.forEach(product => {
+        
+        productsRef.on('value', (snapshot) => {
+            productsContainer.innerHTML = ''; // Clear products container
+            
+            snapshot.forEach((childSnapshot) => {
+                const product = childSnapshot.val();
                 const productElement = document.createElement('div');
                 productElement.classList.add('product');
 
@@ -64,8 +78,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 productsContainer.appendChild(productElement);
             });
-        }
+        });
     }
 
-    loadProductsFromLocalStorage();
+    loadProductsFromFirebase();
 });
