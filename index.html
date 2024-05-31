@@ -1,45 +1,37 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>amazon.sex</title>
+    <title>موقع تسوق</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>amazon.sex</h1>
+        <h1>مرحبًا بك في موقع التسوق</h1>
+        <div id="settings">
+            <label for="publishProducts">نشر السلع:</label>
+            <input type="checkbox" id="publishProducts" name="publishProducts">
         </div>
-        <div class="search-bar">
-            <input type="text" placeholder="ابحث عن منتجات...">
-            <button>بحث</button>
-        </div>
-        <div class="account">
-            <button id="menuToggle"><i class="fas fa-bars"></i></button>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="#">الصفحة الرئيسية</a></li>
+                <li><a href="#">المنتجات</a></li>
+                <li><a href="#">سلة المشتريات</a></li>
+                <li><a href="#">تسجيل الدخول</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav id="sidebar" class="sidebar">
-        <div class="profile">
-            <img id="profileImage" src="default-profile.png" alt="Profile">
-            <span id="profileName">تسجيل الدخول</span>
-        </div>
-        <ul id="sidebarMenu">
-            <li><a href="settings.html">نشر السلع</a></li>
-            <li><a href="#">تعديل السلعة</a></li>
-            <li><a href="#">التعليقات على سلعك</a></li>
-            <li><a href="#">تعديل حسابك</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section class="products">
-            <!-- المنتجات ستُضاف هنا ديناميكيًا -->
-        </section>
-    </main>
-    <footer>
-        <p>حقوق النشر © 2024 amazon.sex</p>
-    </footer>
-    <script src="scripts.js"></script>
+    <section id="products">
+        <!-- المنتجات ستتم إضافتها هنا بواسطة السكربت -->
+    </section>
+    <div id="addProduct">
+        <input type="text" id="productName" placeholder="اسم المنتج">
+        <input type="text" id="productDescription" placeholder="وصف المنتج">
+        <input type="text" id="productPrice" placeholder="السعر">
+        <input type="file" id="productImage">
+        <button onclick="addProduct()">إضافة المنتج</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
