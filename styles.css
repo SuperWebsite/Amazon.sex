@@ -1,0 +1,32 @@
+/* styles.css */
+/* الكود السابق يبقى كما هو */
+
+.settings {
+    padding: 20px;
+}
+
+.settings form {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings label {
+    margin-top: 10px;
+}
+
+.settings input, .settings textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.settings button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
