@@ -1,13 +1,14 @@
 // Initialize Firebase
 const firebaseConfig = {
   apiKey: "QR2gCQbE8Um0VNrrOAvbBt5O9O91SzATfhlWeKdGGzs",
-  authDomain: "example-project.firebaseapp.com",
-  databaseURL: "https://example-project.firebaseio.com",
-  projectId: "example-project",
-  storageBucket: "example-project.appspot.com",
-  messagingSenderId: "123456789",
-  appId: "1:123456789:web:abcdef123456"
+  authDomain: "YOUR_AUTH_DOMAIN",
+  databaseURL: "YOUR_DATABASE_URL",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
 };
+
 
 firebase.initializeApp(firebaseConfig);
 
