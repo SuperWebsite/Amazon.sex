@@ -3,42 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقعي التجاري</title>
+    <title>amazon.sex</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
     <header>
         <div class="logo">
-            <h1>موقعي التجاري</h1>
+            <h1>amazon.sex</h1>
         </div>
         <div class="search-bar">
             <input type="text" placeholder="ابحث عن منتجات...">
             <button>بحث</button>
         </div>
         <div class="cart">
-            <a href="#">سلة التسوق</a>
+            <button id="cartToggle"><i class="fas fa-shopping-cart"></i></button>
         </div>
         <div class="account">
-            <a href="register.html">تسجيل حساب</a>
+            <button id="menuToggle"><i class="fas fa-bars"></i></button>
         </div>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#">الرئيسية</a></li>
-            <li><a href="#">المنتجات</a></li>
-            <li><a href="#">عروض</a></li>
-            <li><a href="#">اتصل بنا</a></li>
-            <li><a href="settings.html">الإعدادات</a></li>
+    <nav id="sidebar" class="sidebar">
+        <div class="profile">
+            <img id="profileImage" src="default-profile.png" alt="Profile">
+            <span id="profileName">تسجيل الدخول</span>
+        </div>
+        <ul id="sidebarMenu">
+            <li><a href="settings.html">نشر السلع</a></li>
+            <li><a href="#">تعديل السلعة</a></li>
+            <li><a href="#">التعليقات على سلعك</a></li>
+            <li><a href="#">تعديل حسابك</a></li>
         </ul>
     </nav>
+    <div id="cartSidebar" class="cart-sidebar">
+        <h2>سلة التسوق</h2>
+        <div id="cartItems"></div>
+        <p>المجموع: <span id="totalPrice">$0</span></p>
+        <button id="checkoutButton">إتمام الشراء</button>
+    </div>
     <main>
         <section class="products">
             <!-- المنتجات سيتم إضافتها هنا ديناميكيًا -->
         </section>
     </main>
     <footer>
-        <p>حقوق النشر © 2024 امازون </p>
+        <p>حقوق النشر © 2024 amazon.sex</p>
     </footer>
     <script src="scripts.js"></script>
 </body>
-</html>
+</html> 
