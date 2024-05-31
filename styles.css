@@ -2,250 +2,55 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    direction: rtl;
-    background-color: #f4f4f4;
 }
 
 header {
-    background-color: #232f3e;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
 }
 
-header .logo h1 {
-    margin: 0;
-    font-size: 1.5em;
+#settings {
+    margin-top: 10px;
 }
 
-header .search-bar {
-    display: flex;
-    flex: 1;
-    margin: 0 20px;
-}
-
-header .search-bar input {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 3px 0 0 3px;
-}
-
-header .search-bar button {
-    padding: 10px;
-    border: none;
-    background-color: #febd69;
-    border-radius: 0 3px 3px 0;
-    cursor: pointer;
-}
-
-header .cart button, header .account button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5em;
-    cursor: pointer;
+#settings label {
+    font-size: 18px;
     margin-left: 10px;
 }
 
-.sidebar {
-    position: fixed;
-    left: -250px;
-    top: 0;
-    width: 250px;
-    height: 100%;
-    background-color: #37475a;
-    color: white;
-    transition: left 0.3s ease;
-    padding: 20px;
-}
-
-.cart-sidebar {
-    position: fixed;
-    right: -300px;
-    top: 0;
-    width: 300px;
-    height: 100%;
-    background-color: #fff;
-    color: black;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
-    transition: right 0.3s ease;
-    padding: 20px;
-}
-
-.sidebar .profile, .cart-sidebar {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.sidebar .profile img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-}
-
-.sidebar .profile span {
-    display: block;
-    margin-top: 10px;
-    font-size: 1.2em;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin-bottom: 20px;
-}
-
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    display: block;
-    font-size: 1.1em;
-    border-radius: 3px;
-}
-
-.sidebar ul li a:hover {
-    background-color: #232f3e;
-}
-
-.products {
+#products {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 60px 20px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .product {
+    background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 10px;
     margin: 10px;
-    text-align: center;
-    width: 200px;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
-
-.product:hover {
-    transform: scale(1.05);
+    padding: 20px;
+    width: 300px;
 }
 
 .product img {
     max-width: 100%;
     height: auto;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-
-.product button {
-    background-color: #ff9900;
-    color: white;
-    border: none;
-    padding: 10px;
     border-radius: 5px;
-    cursor: pointer;
+}
+
+.product h2 {
     margin-top: 10px;
-    transition: background-color 0.3s;
 }
 
-.product button:hover {
-    background-color: #cc7a00;
-}
-
-.product .price {
-    color: green;
-    font-weight: bold;
+.product p {
     margin: 10px 0;
 }
 
-.product-details {
-    padding: 20px;
-}
-
-.product-details img {
-    max-width: 100%;
-    height: auto;
-}
-
-.comments, .suggestions {
-    margin-top: 20px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.comments form, .suggestions form {
-    display: flex;
-    flex-direction: column;
-}
-
-.comments label, .suggestions label {
-    margin-top: 10px;
-}
-
-.comments textarea, .comments select, .suggestions textarea, .suggestions select {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.comments button, .suggestions button {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.comments button:hover, .suggestions button:hover {
-    background-color: #388E3C;
-}
-
-.comments .comment, .suggestions .suggestion {
-    border-top: 1px solid #ccc;
-    padding: 10px 0;
-}
-
-#productRating span {
-    font-size: 24px;
-    color: gold;
-}
-
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #ccc;
-}
-
-.cart-item img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-}
-
-.cart-item button {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 5px;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-main {
-    padding-top: 60px;
+.price {
+    font-weight: bold;
+    color: #009900;
 }
