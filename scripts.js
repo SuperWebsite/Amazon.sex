@@ -1,58 +1,71 @@
-let products = [];
+// scripts.js
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll('.product button');
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            alert('تم إضافة المنتج إلى السلة!');
+        });
+    });
 
-function addProduct() {
-    let productName = document.getElementById("productName").value;
-    let productDescription = document.getElementById("productDescription").value;
-    let productPrice = document.getElementById("productPrice").value;
-    let productImage = document.getElementById("productImage").files[0];
-    let publishProduct = document.getElementById("publishProducts").checked;
-    
-    if (productName && productDescription && productPrice && productImage) {
-        let reader = new FileReader();
-        reader.onload = function (event) {
-            let product = {
+    // إضافة منتج جديد
+    const productForm = document.getElementById('productForm');
+    if (productForm) {
+        productForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const productName = document.getElementById('productName').value;
+            const productImage = document.getElementById('productImage').value;
+            const productDescription = document.getElementById('productDescription').value;
+
+            const newProduct = {
                 name: productName,
-                description: productDescription,
-                price: productPrice,
-                image: event.target.result,
-                published: publishProduct
+                image: productImage,
+                description: productDescription
             };
-            products.push(product);
-            displayProducts();
-        };
-        reader.readAsDataURL(productImage);
-    } else {
-        alert("يرجى إدخال جميع المعلومات");
+
+            addProductToLocalStorage(newProduct);
+            alert('تم إضافة المنتج بنجاح!');
+            productForm.reset();
+        });
     }
-}
 
-function displayProducts() {
-    let productsSection = document.getElementById("products");
-    productsSection.innerHTML = "";
-    products.forEach(function(product) {
-        if(product.published) {
-            let productHTML = `
-                <div class="product">
-                    <img src="${product.image}" alt="${product.name}">
-                    <h2>${product.name}</h2>
-                    <p>${product.description}</p>
-                    <span class="price">السعر: $${product.price}</span>
-                    <button onclick="removeProduct('${product.name}')">حذف المنتج</button>
-                    <button onclick="addToCart('${product.name}')">أضف إلى السلة</button>
-                </div>
-            `;
-            productsSection.innerHTML += productHTML;
+    function addProductToLocalStorage(product) {
+        let products = JSON.parse(localStorage.getItem('products')) || [];
+        products.push(product);
+        localStorage.setItem('products', JSON.stringify(products));
+    }
+
+    function loadProductsFromLocalStorage() {
+        let products = JSON.parse(localStorage.getItem('products')) || [];
+        const productsContainer = document.querySelector('.products');
+        if (productsContainer) {
+            products.forEach(product => {
+                const productElement = document.createElement('div');
+                productElement.classList.add('product');
+
+                const productImage = document.createElement('img');
+                productImage.src = product.image;
+                productElement.appendChild(productImage);
+
+                const productName = document.createElement('h2');
+                productName.textContent = product.name;
+                productElement.appendChild(productName);
+
+                const productDescription = document.createElement('p');
+                productDescription.textContent = product.description;
+                productElement.appendChild(productDescription);
+
+                const productButton = document.createElement('button');
+                productButton.textContent = 'إضافة إلى السلة';
+                productButton.addEventListener('click', () => {
+                    alert('تم إضافة المنتج إلى السلة!');
+                });
+                productElement.appendChild(productButton);
+
+                productsContainer.appendChild(productElement);
+            });
         }
-    });
-}
+    }
 
-function removeProduct(productName) {
-    products = products.filter(function(product) {
-        return product.name !== productName;
-    });
-    displayProducts();
-}
-
-function addToCart(productName) {
-    // تنفيذ إضافة المنتج إلى سلة المشتريات
-}
+    loadProductsFromLocalStorage();
+});
