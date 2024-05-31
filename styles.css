@@ -1,27 +1,132 @@
-/* styles.css */
-/* الكود السابق يبقى كما هو */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-.settings {
+header {
+    background-color: #232f3e;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header .logo h1 {
+    margin: 0;
+}
+
+header .search-bar {
+    display: flex;
+}
+
+header .search-bar input {
+    padding: 5px;
+    border: none;
+    border-radius: 3px 0 0 3px;
+}
+
+header .search-bar button {
+    padding: 5px;
+    border: none;
+    background-color: #febd69;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+}
+
+header .cart a, header .account a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #ff9900;
+    border-radius: 3px;
+}
+
+nav {
+    background-color: #37475a;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #232f3e;
+}
+
+main {
     padding: 20px;
 }
 
-.settings form {
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.product button {
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.settings, .register {
+    padding: 20px;
+}
+
+.settings form, .register form {
     display: flex;
     flex-direction: column;
 }
 
-.settings label {
+.settings label, .register label {
     margin-top: 10px;
 }
 
-.settings input, .settings textarea {
+.settings input, .register input, .settings textarea, .register textarea {
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.settings button {
+.settings button, .register button {
     margin-top: 20px;
     padding: 10px;
     background-color: #4CAF50;
@@ -29,4 +134,10 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.product .price {
+    color: green;
+    font-weight: bold;
+    margin: 10px 0;
 }
